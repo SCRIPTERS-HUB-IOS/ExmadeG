@@ -1,0 +1,231 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body, #__next {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0a0000;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  filter: brightness(var(--site-brightness, 1));
+}
+
+/* Container */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid rgba(255, 0, 51, 0.4);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #ff0040;
+  user-select: text;
+}
+
+.hdr-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Brightness Slider */
+.brightness-slider {
+  width: 130px;
+  cursor: pointer;
+  accent-color: #ff0040;
+  border-radius: 6px;
+  transition: filter 0.2s ease;
+}
+.brightness-slider:hover,
+.brightness-slider:focus {
+  filter: brightness(1.3);
+  outline: none;
+}
+
+/* Social buttons */
+.social-btns {
+  display: flex;
+  gap: 14px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 0, 51, 0.15);
+  box-shadow: 0 0 8px #ff0040;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1.8px solid #ff0040;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+.social-btn:hover,
+.social-btn:focus {
+  background: rgba(255, 0, 51, 0.3);
+  box-shadow: 0 0 20px #ff0040;
+  outline: none;
+  transform: scale(1.15);
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+.icon-svg {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Pulse animation for social icons */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 12px #ff0040;
+  }
+  50% {
+    box-shadow: 0 0 24px #ff0040;
+  }
+}
+
+/* Section content */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #ff0040;
+  user-select: none;
+}
+
+/* Buttons container */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn {
+  background-color: #ff0040;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 12px #ff0040;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #ff3366;
+  box-shadow: 0 0 28px #ff3366;
+  outline: none;
+}
+.btn.discord {
+  background-color: #1e40ff;
+  box-shadow: 0 0 15px #1e40ff;
+}
+.btn.discord:hover,
+.btn.discord:focus {
+  background-color: #3b59ff;
+  box-shadow: 0 0 32px #3b59ff;
+}
+.btn.small {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+/* Link Cards */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.link-card {
+  background-color: rgba(255, 0, 51, 0.15);
+  border-radius: 12px;
+  padding: 14px 24px;
+  box-shadow: 0 0 12px #ff0040;
+  text-decoration: none;
+  color: #fff;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-card:hover,
+.link-card:focus {
+  background-color: rgba(255, 51, 102, 0.25);
+  box-shadow: 0 0 30px #ff3366;
+  outline: none;
+  cursor: pointer;
+}
+.ln {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.sub {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  user-select: none;
+}
+
+/* Footer filler */
+.footer-space {
+  height: 140px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,0,51,0.08) 0%, rgba(40,0,0,0.25) 100%);
+  box-shadow:
+    0 0 20px rgba(255, 0, 51, 0.3),
+    inset 0 0 40px rgba(168, 0, 0, 0.5);
+  user-select: none;
+}
+
+/* Accessibility helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
